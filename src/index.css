@@ -1,0 +1,87 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Montserrat:wght@300;400;500;600&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 0 0% 100%;
+    --foreground: 0 0% 0%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 0 0% 0%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 0 0% 0%;
+
+    --primary: 0 0% 0%;
+    --primary-foreground: 0 0% 100%;
+
+    --secondary: 39 100% 97%;
+    --secondary-foreground: 0 0% 0%;
+
+    --muted: 39 100% 97%;
+    --muted-foreground: 0 0% 45%;
+
+    --accent: 0 68% 27%;
+    --accent-foreground: 0 0% 100%;
+
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 0 0% 85%;
+    --input: 0 0% 85%;
+    --ring: 0 0% 0%;
+
+    --radius: 0.5rem;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground font-montserrat;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-playfair;
+  }
+}
+
+@layer components {
+  .section-container {
+    @apply max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 sm:py-24;
+  }
+  
+  .section-title {
+    @apply font-playfair text-4xl md:text-5xl font-bold mb-12 relative;
+  }
+  
+  .section-title::after {
+    content: "";
+    @apply absolute -bottom-4 left-0 h-0.5 w-24 bg-burgundy;
+  }
+  
+  /* Fix circular dependency by using a specific color value instead of the utility class */
+  .burgundy-bg .section-title::after {
+    @apply bg-white;
+  }
+  
+  .styled-link {
+    @apply relative inline-block text-black font-medium;
+  }
+  
+  .styled-link::after {
+    content: "";
+    @apply absolute -bottom-1 left-0 h-0.5 w-0 bg-burgundy transition-all duration-300;
+  }
+  
+  .styled-link:hover::after {
+    @apply w-full;
+  }
+}
