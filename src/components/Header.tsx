@@ -72,11 +72,12 @@ const Header = () => {
     >
       <div className="container mx-auto px-6 flex items-center justify-between">
         <Link to="/" className="text-black">
-          <img 
-            src="/images/logo-handwritten.png" 
-            alt="Sebastian's Logo" 
-            className="h-12 w-auto"
-          />
+        <img
+          src={`${import.meta.env.BASE_URL}images/logo-handwritten.png`}
+          alt="Sebastian's Logo"
+          className="h-12 w-auto"
+        />
+
         </Link>
         
         <nav className="hidden md:block">

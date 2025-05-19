@@ -49,11 +49,12 @@ const AboutSection = () => {
                 animationDelay: '0.5s'
               }}>
                 <div className="bg-gray-100 h-full w-full overflow-hidden">
-                  <img 
-                    src="/images/Sebastian.png" 
-                    alt="Profile Picture" 
-                    className="w-full h-full object-cover"
-                  />
+                <img 
+                  src={`${import.meta.env.BASE_URL}images/Sebastian.png`} 
+                  alt="Profile Picture" 
+                  className="w-full h-full object-cover"
+                />
+
                 </div>
               </div>
             )}

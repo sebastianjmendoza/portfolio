@@ -38,11 +38,12 @@ const Footer = () => {
         <div className="flex flex-col md:flex-row justify-between items-center">
           <div className="mb-4 md:mb-0">
             <Link to="/" className="text-black">
-              <img 
-                src="/images/logo-handwritten.png" 
-                alt="Sebastian's Logo" 
-                className="h-10 w-auto"
-              />
+            <img
+              src={`${import.meta.env.BASE_URL}images/logo-handwritten.png`}
+              alt="Sebastian's Logo"
+              className="h-12 w-auto"
+            />
+
             </Link>
           </div>
           
